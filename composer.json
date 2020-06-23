@@ -1,0 +1,12 @@
+{
+  "name": "predv/test",
+  "authors": [
+    {
+      "name": "Nina Herasymova",
+      "email": "predvoditeldvoryanstva@gmail.com"
+    }
+  ],
+  "require": {
+    "twig/twig": "3.0"
+  }
+}

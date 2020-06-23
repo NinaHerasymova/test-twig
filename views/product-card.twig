@@ -1,0 +1,51 @@
+{% set cards = [
+    {title: 'Blandit turpis cursus in hac habitasse platea dictumst',
+        date: '11.11.2011',
+        author: 'Consectetur Purus',
+    image: 'https://i.pinimg.com/originals/8d/70/aa/8d70aa58b9ce9fcf1deb6745b78fd588.jpg'},
+    {title: 'Lorem sed risus ultricies tristique nulla aliquet enim',
+        date: '12.09.2020',
+        author: 'Felis Eget',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZSyrVu-3qDkiLU0Jag0ZomajlamyCYAFVXQ&usqp=CAU'},
+    {title: 'Magnis dis parturient montes nascetur ridiculus mus mauris',
+        date: '03.08.2008',
+        author: 'Velit Aliquet',
+        image: 'https://i.pinimg.com/originals/8d/70/aa/8d70aa58b9ce9fcf1deb6745b78fd588.jpg'},
+    {title: 'Vitae congue mauris rhoncus aenean vel elit scelerisque',
+        date: '23.10.2009',
+        author: 'Sagittis Id',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZSyrVu-3qDkiLU0Jag0ZomajlamyCYAFVXQ&usqp=CAU'},
+    {title: 'Egestas sed tempus urna et pharetra pharetra massa',
+        date: '14.03.1995',
+        author: 'Velit Aliquet',
+        image: 'https://img-9gag-fun.9cache.com/photo/adLem3Q_460s.jpg'},
+    {title: 'At erat pellentesque adipiscing commodo elit at imperdiet',
+        date: '12.06.2016',
+        author: 'Felis Eget',
+        image: 'https://i.pinimg.com/originals/8d/70/aa/8d70aa58b9ce9fcf1deb6745b78fd588.jpg'},
+    {title: 'blandit turpis cursus in hac habitasse platea dictumst',
+        date: '23.09.2017',
+        author: 'Consectetur Purus',
+        image: 'https://st4.depositphotos.com/22221724/24164/i/450/depositphotos_241645668-stock-photo-portrait-young-adorable-corgie-isolated.jpg'},
+    {title: 'Metus dictum at tempor commodo ullamcorper a lacus',
+        date: '11.12.2017',
+        author: 'Felis Eget',
+        image: 'https://i.pinimg.com/474x/34/a9/e4/34a9e4e6938983a0cdc0d1df68a5e61e.jpg'},
+    {title: 'Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend',
+        date: '03.05.2015',
+        author: 'Velit Aliquet',
+        image: 'https://www.zooplus.de/magazin/wp-content/uploads/2017/07/welsh-corgi-pembroke-welpe-1024x684.jpg'},
+] %}
+
+{% for i in 0..cards|length-1 %}
+    <div class="product-card" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20.77%, #000000 100%), url({{ cycle(cards[i]['image'], i)}})no-repeat; background-size: cover">
+        <h4 class="product-card__title" >
+            <a href="#" class="product-card__title__link">{{ cycle(cards[i]['title'], i) }}</a>
+        </h4>
+        <div class="product-card__info">
+            <span class="product-card__info date">{{ cycle(cards[i]['date'], i) }}</span>
+            <span class="product-card__info author">{{ cycle(cards[i]['author'], i) }}</span>
+        </div>
+    </div>
+
+{% endfor %}

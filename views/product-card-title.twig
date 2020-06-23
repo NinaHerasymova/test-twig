@@ -1,0 +1,37 @@
+{% set cards = [
+    {title: 'Blandit turpis cursus in hac habitasse platea dictumst',
+        date: '11.11.2011',
+        author: 'Consectetur Purus'},
+    {title: 'Lorem sed risus ultricies tristique nulla aliquet enim',
+        date: '12.09.2020',
+        author: 'Felis Eget',
+    },
+    {title: 'Magnis dis parturient montes nascetur ridiculus mus mauris',
+        date: '03.08.2008',
+        author: 'Velit Aliquet'},
+    {title: 'Vitae congue mauris rhoncus aenean vel elit scelerisque',
+        date: '23.10.2009',
+        author: 'Sagittis Id'},
+    {title: 'Egestas sed tempus urna et pharetra pharetra massa',
+        date: '14.03.1995',
+        author: 'Velit Aliquet'},
+    {title: 'At erat pellentesque adipiscing commodo elit at imperdiet',
+        date: '12.06.2016',
+        author: 'Felis Eget'},
+    {title: 'Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend',
+        date: '03.05.2015',
+        author: 'Velit Aliquet',
+    },
+] %}
+
+{% for i in 0..cards|length-1 %}
+    <div class="sidebar-card">
+        <h4 class="product-card__title">
+            <a href="#" class="product-card__title__link__sidebar">{{ cycle(cards[i]['title'], i) }}</a>
+        </h4>
+        <div class="product-card__info">
+            <span class="product-card__info date">{{ cycle(cards[i]['date'], i) }}</span>
+            <span class="product-card__info author">{{ cycle(cards[i]['author'], i) }}</span>
+        </div>
+    </div>
+{% endfor %}
